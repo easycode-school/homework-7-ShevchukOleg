@@ -1,0 +1,28 @@
+<div class='container'>
+  <form #personalDataForm = 'ngForm' (ngSubmit)="onSubmitHandler(personalDataForm)">
+      <div class="row">
+          <div class="col">
+              <label for='person'>Personal info:</label>
+              <input type="text" id='person' name='name' class="form-control" [ngModel] = 'editingUser?.name' placeholder="Name" required>
+              <input type="text"name='userName' class="form-control" [ngModel] = 'editingUser?.username' placeholder="User name" required>
+              <input type="text" name='phone' class="form-control" [ngModel] = 'editingUser?.phone' placeholder="Phone" required>
+              <input type="email" name='email' class="form-control" [ngModel] = 'editingUser?.email' placeholder="Email required">
+              <input type="text" name='webSite' class="form-control" [ngModel] = 'editingUser?.website' placeholder="Your site" required>
+              <label for='company'>Business</label>
+              <input type="text" id="company" name='organization' class="form-control" [ngModel] = 'editingUser?.company.name' placeholder="Organization" required>
+              <input type="text" name='description' class="form-control" [ngModel] = 'editingUser?.company.catchPhrase' placeholder="Description" required>
+              <input type="text" name='bs' class="form-control" [ngModel] = 'editingUser?.company.bs' placeholder="Powers" required>
+          </div>
+          <div class="col">
+              <label for='location'>Address</label>
+              <input type="text" id='location' name='city' class="form-control" [ngModel] = 'editingUser?.address.city' placeholder="City" required>
+              <input type="text" name='zipcode' class="form-control" [ngModel] = 'editingUser?.address.zipcode' placeholder="Local code" required>
+              <input type="text" name='street' class="form-control" [ngModel] = 'editingUser?.address.street' placeholder="Street" required>
+              <input type="text" name='suite' class="form-control" [ngModel] = 'editingUser?.address.suite' placeholder="Suite" required>
+              <input type="number" name='lat' class="form-control" [ngModel] = 'editingUser?.address.geo.lat' placeholder="Latitude" required>
+              <input type="number" name='lng' class="form-control" [ngModel] = 'editingUser?.address.geo.lng' placeholder="Longitude" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Edit</button>
+  </form>
+</div>

@@ -7,7 +7,17 @@ export class AuthService {
 
   constructor() { }
 
+  /**
+   * isAuth - метод перевірки авторизації
+   */
   isAuth() {
-    return localStorage.getItem('token') ? true : false;
+    const mail = localStorage.getItem('mail');
+    const passwoord = localStorage.getItem('password');
+    const token = localStorage.getItem('token');
+    if (mail && passwoord && token ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

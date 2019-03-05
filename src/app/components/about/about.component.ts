@@ -14,6 +14,9 @@ export class AboutComponent implements OnInit {
     private title: Title
   ) { }
 
+  /**
+   * метод отримання данних що передаються через роутер для визначення тайтлу сторінки
+   */
   ngOnInit() {
     this.route.data.subscribe((item) => {
       this.title.setTitle(item.title);
