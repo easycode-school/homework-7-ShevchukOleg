@@ -6,13 +6,19 @@ import { AboutComponent } from './components/about/about.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
+
+/**
+ * шляхи для переходу по додатку
+ */
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
   { path: 'users/:id', component: UserInfoComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent, data: { title: 'My title' }, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/users', pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'edit/:id', component: UserEditComponent, canActivate: [AuthGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
 
